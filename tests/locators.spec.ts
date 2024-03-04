@@ -4,7 +4,7 @@ test('locators demo', async ({ page }) => {
     await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
   
     // Find the username field and enter value
-   // await page.getByRole("textbox").first().fill("Admin");
+   //await page.getByRole("textbox").first().fill("Admin");
    
     await page.getByPlaceholder(/username/i).fill("Admin");
     await page.getByRole("button",{name: /login/i});
