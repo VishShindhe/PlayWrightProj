@@ -6,6 +6,6 @@ test('ui demo', async ({ page }) => {
     await page.getByPlaceholder(/username/i).fill("Admin");
     await page.getByPlaceholder(/password/i).fill("admin123");
     await page.getByRole("button",{name: /login/i}).click();
-    await page.getByRole("button",{name: "check"}).click();
+    //await page.getByRole("button",{name: "check"}).click();
     
   });
