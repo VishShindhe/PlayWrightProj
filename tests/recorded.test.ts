@@ -1,4 +1,4 @@
-/*import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
@@ -7,10 +7,7 @@ test('test', async ({ page }) => {
   await page.getByPlaceholder('Username').press('Tab');
   await page.getByPlaceholder('Password').fill('admin123');
   await page.getByRole('button', { name: 'Login' }).click();
-  await page.
-  await page.getByText('MOHAMED AMINE').click();
-  await page.getByRole('menuitem', { name: 'About' }).click();
-  await page.getByRole('button', { name: '×' }).click();
-  await page.getByText('MOHAMED AMINE').click();
+  await page.getByAltText('profile picture').click();
+  //await page.getByText('MOHAMED AMINE').click();
   await page.getByRole('menuitem', { name: 'Logout' }).click();
-});*/
+});

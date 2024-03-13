@@ -31,4 +31,4 @@ test("Login demo", async () => {
     await page3.goto("https://ecommerce-playground.lambdatest.io/index.php?route=account/account");
     await page3.waitForTimeout(5000);
 
-})
+}) 
