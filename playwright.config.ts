@@ -1,7 +1,7 @@
 import type { PlaywrightTestConfig} from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
-  testMatch: ["tests/windows.test.ts"],
+  testMatch: ["tests/uploadDownload.test.ts"],
   use: {
     headless: false,
     screenshot: "only-on-failure",
