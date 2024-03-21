@@ -3,6 +3,12 @@ export default class LoginPage{
 
     constructor(public page: Page){    }
 
+    async login(email: string, password: string){
+        await this.enterEmail(email);
+        await this.enterPassword(password);
+        await this.clickLogin();
+    }
+
     async enterEmail(email: string) {
         await this.page
                 .getByPlaceholder('E-Mail Address')
