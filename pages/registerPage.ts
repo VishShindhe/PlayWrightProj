@@ -24,36 +24,50 @@ export default class RegisterPage{
     async enterTelephone(phone: string) {
         await this.page
                 .getByPlaceholder('Telephone')
-                .fill(phone);
+                .type(phone);
     }
 
     async enterPassword(password: string) {
-        await this.page
-                .locator("input[name='pasword']")
-                .fill(password);
+        await this.page.getByPlaceholder('Password').first().fill(password);
     }
 
-    async enterConfirmPassword(confirmPassword: string) {
-        await this.page
-                .locator("input[name='confirm']")
-                .fill(confirmPassword);
+   async enterConfirmPassword(confirmPassword: string) {
+        await this.page.getByPlaceholder('Password Confirm').fill(confirmPassword);
     }
 
-    async isSubscribed(){
-        return await this.page
-                    .locator("#id=input-newsletter-no").isChecked();
-    }
+    // async isSubscribed(){
+    //     return await this.page
+    //                 .locator("#id=input-newsletter-no").isChecked();
+    // }
 
     async clickTermsAndCondition() {
-        this.page.click("input[name= 'agree']")
+        // await Promise.all ([
+        //     this.page.waitForLoadState('domcontentloaded'),
+        //     this.page.locator("#input-agree").click()
+        // ])
+        //await this.page.check("//lable[@for='input-agree']")
+        //await this.page.getByRole('checkbox', { name: 'agree' }).click();
+        await this.page.getByText('I have read and agree to the').click();
+        
+       
     }
 
     async clickContinueToRegister() {
-        await Promise.all ([
-            this.page.waitForLoadState('domcontentloaded'),
-            this.page.locator("input[value='Continue']")
-        ])
+        // await Promise.all ([
+        //     this.page.waitForLoadState('domcontentloaded'),
+        //     this.page.locator("input[value='Continue']")
+        // ])
+
+        await this.page.getByRole('button', { name: 'Continue' }).click()
         
     }
 
 }
+
+// import { test, expect } from '@playwright/test';
+
+// test('test', async ({ page }) => {
+//   await page.goto('https://ecommerce-playground.lambdatest.io/index.php?route=account/register');
+//   await page.getByText('I have read and agree to the').click();
+//   ;
+// });

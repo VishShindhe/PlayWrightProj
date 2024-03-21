@@ -69,6 +69,16 @@ export default defineConfig({
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
   ],
+  projects: [
+    {
+      name: 'chromium',
+      use: { 
+        ...devices['Desktop Chrome'],
+        launchOptions: {
+          args: ["--start-maximized"]
+        } 
+      },
+    },
 
   /* Run your local dev server before starting the tests */
   // webServer: {
