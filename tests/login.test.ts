@@ -1,8 +1,30 @@
 import {chromium,test} from "@playwright/test"
 
+//Lambda capabilities
+const capabilities = {
+    browserName: "Chrome",
+    browserVersion: "latest",
+    "LT:Options": {
+        platform: "MacOS Sonoma",
+        build: "Playwright Test Build",
+        name: "Playwright Test",
+        user: 'vishwa.shindhe',
+        accessKey: 'qLCoWlJGxHr7zNnuX119V7rgx8XgcgZsOSON959PzFb2kKr2oz',
+        network: true,
+        video: true,
+        console: true,
+        tunnel: false,
+        tunnelName:"",
+        geoLocation: '',
+    },
+
+};
+
 test("Login demo", async () => {
 
-    const browser = await chromium.launch({
+    const browser = await chromium.connect(`wss://cdp.lambdatest.com/playwright?capabilities=
+    ${encodeURIComponent(JSON.stringify(capabilities))}`);
+    ({
         headless: false
     });
     
